@@ -85,21 +85,13 @@ $ standard-readme-spec
 
 ## 维护者
 
-[@RichardLitt](https://github.com/RichardLitt)。
+[@banto6](https://github.com/banto6)。
 
 ## 如何贡献
 
-非常欢迎你的加入！[提一个 Issue](https://github.com/RichardLitt/standard-readme/issues/new) 或者提交一个 Pull Request。
-
-
-标准 Readme 遵循 [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) 行为规范。
-
-### 贡献者
-
-感谢以下参与项目的人：
-<a href="graphs/contributors"><img src="https://opencollective.com/standard-readme/contributors.svg?width=890&button=false" /></a>
+非常欢迎你的加入！[提一个 Issue](https://github.com/banto6/quick-paste/issues/new) 或者提交一个 Pull Request。
 
 
 ## 使用许可
 
-[MIT](LICENSE) © Richard Littauer
+[GNU General Public License v2.0](LICENSE)
