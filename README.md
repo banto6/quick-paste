@@ -9,6 +9,7 @@
 ## 内容列表
 
 - [特性](#特性)
+- [截图](#截图))
 - [使用说明](#使用说明)
   - [Docker](#Docker)
 - [维护者](#维护者)
@@ -21,6 +22,24 @@
 - 代码高亮
 - 访问保护
 - 数据离线加密
+
+## 截图
+
+![首页](screenshots/home.png)
+
+<details>
+  <summary>点击查看更多截图</summary>
+
+![创建完成页面](screenshots/paste-create-success.png)
+
+![查看Paste](screenshots/view-paste.png)
+
+![阅后即焚提醒](screenshots/paste-burn-after-reading.png)
+
+![需要密码](screenshots/paste-need-password.png)
+
+![未找到](screenshots/paste-not-found.png)
+</details>
 
 ## 使用说明
 
