@@ -97,18 +97,18 @@
 
             </div>
             <div class="option-value">
-              <a-radio-group name="radioGroup" v-model="passwordType">
-                <a-radio value="none">
+              <a-radio-group name="radioGroup" v-model="privacyPolicy">
+                <a-radio value="NONE">
                   <a-tooltip placement="topLeft" title="内容明文存储在服务器中，并且所有知道链接的人都可以查看" arrow-point-at-center>
                     公开
                   </a-tooltip>
                 </a-radio>
-                <a-radio :value="1">
+                <a-radio value="1">
                   <a-tooltip placement="topLeft" title="内容明文存储在服务器中，访问时需要密码授权才能查看内容" arrow-point-at-center>
                     访问加密
                   </a-tooltip>
                 </a-radio>
-                <a-radio :value="2" disabled>
+                <a-radio value="2" disabled>
                   <a-tooltip placement="topLeft"
                              title="内容将在浏览器中使用AES加密后存储在服务器中，访问时系统会将密文直接返回给访问者，访问者需要提供正确的密码才能解密并查看内容。注：密码丢失后内容将永远无法解密"
                              arrow-point-at-center>
@@ -119,8 +119,7 @@
             </div>
           </div>
 
-
-          <div class="option-item" v-if="passwordType !== 'none'">
+          <div class="option-item" v-if="privacyPolicy !== 'NONE'">
             <div class="option-name"></div>
             <div class="option-value">
               <a-input placeholder="请输入密码"/>
@@ -131,7 +130,7 @@
             <div class="option-name">
             </div>
             <div class="option-value">
-              <a-button  @click="createPaste" icon="save" :loading="false">
+              <a-button @click="createPaste" icon="save" :loading="false">
                 创建Paste
               </a-button>
             </div>
@@ -155,7 +154,7 @@ export default {
     return {
       pid: '',
       fileImporting: false,
-      passwordType: 'none',
+      privacyPolicy: 'NONE',
       content: '',
       expirationStrategies: [
         {

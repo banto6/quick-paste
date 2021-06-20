@@ -7,11 +7,11 @@ import lombok.AllArgsConstructor;
  * @author banto
  */
 @AllArgsConstructor
-public enum PasswordPolicy {
+public enum PrivacyPolicy {
 
     NONE("NONE"),
-    ACCESS("ACCESS"),
-    DATA("DATA");
+    AUTHORIZATION("AUTHORIZATION"),
+    ENCRYPTED("ENCRYPTED");
 
     @EnumValue
     private String code;

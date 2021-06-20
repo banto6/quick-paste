@@ -1,7 +1,7 @@
 <template>
   <a-result status="success" title="Paste创建成功">
     <div class="desc">
-      <p style="font-size: 16px;">
+      <p class="tips-title">
         <strong>可通过以下方式访问Paste:</strong>
       </p>
       <p>
@@ -11,7 +11,7 @@
         <a :href="visitUrl">{{ visitUrl }}</a>
       </p>
       <p>
-        <a-icon type="info-circle" /> 扫描下方二维码访问 <a-tag style="margin-left: 10px">下载二维码</a-tag>
+        <a-icon type="info-circle" /> 扫描下方二维码访问 <a-tag style="margin-left: 10px" @click="downloadQrcode">下载二维码</a-tag>
       </p>
       <p id="qrcode"></p>
     </div>
@@ -48,8 +48,7 @@ export default {
     }
   },
   methods: {
-    init() {
-      this.visitUrl = 'http://10.1.1.210:8080/p/'+ this.pid;
+    makeQrcode() {
       let qrcode = new QRCode('qrcode', {
         width: 132,
         height: 132,
@@ -57,7 +56,15 @@ export default {
         colorLight : "#fff",
       });
       qrcode.makeCode(this.visitUrl);
-
+    },
+    downloadQrcode() {
+      let myCanvas = document.getElementById('qrcode').getElementsByTagName('canvas');
+      let a = document.createElement("a")
+      a.href = myCanvas[0].toDataURL('image/png').replace('image/png', 'image/octet-stream')
+      a.download = this.pid + '.png';
+      a.click();
+    },
+    initClipboard() {
       const self = this;
       const clipboard = new Clipboard('#copy', {
         text: function () {
@@ -71,6 +78,11 @@ export default {
       clipboard.on('error', function() {
         self.$message.error('复制失败');
       });
+    },
+    init() {
+      this.visitUrl = window.location.protocol + '//' + window.location.host + '/p/'+ this.pid;
+      this.makeQrcode();
+      this.initClipboard();
     }
   },
   mounted() {
@@ -80,4 +92,7 @@ export default {
 </script>
 
 <style scoped>
+.tips-title {
+  font-size: 16px;
+}
 </style>

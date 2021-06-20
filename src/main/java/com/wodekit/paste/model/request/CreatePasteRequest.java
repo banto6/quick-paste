@@ -1,5 +1,6 @@
 package com.wodekit.paste.model.request;
 
+import com.wodekit.paste.model.entity.enums.PrivacyPolicy;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,8 +25,8 @@ public class CreatePasteRequest {
     private String effective;
 
     @NotBlank(message = "访问策略不能为空")
-    private String encryptionStrategy;
+    private PrivacyPolicy privacyPolicy;
 
-    private String password;
+    private String secret;
 
 }
