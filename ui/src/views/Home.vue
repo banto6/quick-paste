@@ -105,7 +105,7 @@
                 </a-radio>
                 <a-radio value="1">
                   <a-tooltip placement="topLeft" title="内容明文存储在服务器中，访问时需要密码授权才能查看内容" arrow-point-at-center>
-                    访问加密
+                    私密分享
                   </a-tooltip>
                 </a-radio>
                 <a-radio value="2" disabled>
